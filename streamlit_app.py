@@ -15,23 +15,11 @@ if not api_key:
 # Instantiate the Anthropic client
 client = anthropic.Anthropic(api_key=api_key)
 
-def is_incomplete(response_text):
+def get_initial_generation(unit_info):
     """
-    Check if the response appears incomplete based on certain indicators.
+    Generates the initial version of the video script.
     """
-    incomplete_indicators = [
-        "[Continue"
-        "would you like me to continue",
-        "continue with additional frames",
-        "continue with remaining frames",
-        "let me know if you'd like me to continue"
-    ]
-    return any(phrase in response_text for phrase in incomplete_indicators)
-
-def get_full_response(unit_info):
-    """
-    Generate the full video script by chaining API calls if the output is truncated.
-    """
+    
     # Define your full prompt
     user_content = f"""
 # CONTEXT #
@@ -153,29 +141,72 @@ Visuals: Simple example showing 24 × 6 broken into (20 × 6) + (4 × 6) with co
         {"role": "user", "content": user_content + "\n\n" + unit_info}
     ]
     
-    full_response = ""
-    while True:
-        response = client.messages.create(
-            model="claude-3-5-sonnet-20241022",
-            system="You are a helpful assistant that converts provided unit content into a final version video script according to the instructions.",
-            messages=conversation_history,
-            max_tokens=1500,  # Increase if needed
-            stream=False
-        )
-        # Assume response.content is a list; take text from the first element.
-        chunk = response.content[0].text
-        full_response += chunk
-        
-        # Check if the response appears to be incomplete.
-        if not is_incomplete(chunk):
-            break
-        
-        # Append the received chunk and ask for the continuation.
-        conversation_history.append({"role": "assistant", "content": chunk})
-        conversation_history.append({
-            "role": "user",
-            "content": "Please continue generating the rest of the video script without asking if you should continue."
-        })
+    response = client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        system="You are a helpful assistant that converts provided unit content into a final version video script according to the instructions.",
+        messages=conversation_history,
+        max_tokens=1500,
+        stream=False
+    )
+    return response.content[0].text
+
+def review_content(content):
+    """
+    Uses a second model call to review the script for completeness.
+    The reviewer should respond only with 'complete' or 'incomplete'.
+    """
+    review_prompt = (
+        "Review the following video script for completeness. "
+        "If the script appears complete, respond with 'complete'. "
+        "If it appears incomplete, respond with 'incomplete'.\n\n"
+        f"Script:\n{content}"
+    )
+    response = client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        system="You are a script reviewer. Evaluate the provided video script and respond only with 'complete' or 'incomplete'.",
+        messages=[{"role": "user", "content": review_prompt}],
+        max_tokens=50,
+        stream=False
+    )
+    return response.content[0].text.strip().lower()
+
+def get_continuation(previous_content, unit_info):
+    """
+    Requests the original model to continue generation from where it left off.
+    """
+    followup_prompt = (
+        "The following video script appears incomplete. "
+        "Please continue generating the rest of the video script from where you left off, "
+        "and do not ask if you should continue.\n\n"
+        f"Script so far:\n{previous_content}\n\n" + unit_info
+    )
+    conversation_history = [
+        {"role": "user", "content": followup_prompt}
+    ]
+    
+    response = client.messages.create(
+        model="claude-3-5-sonnet-20241022",
+        system="You are a helpful assistant that converts provided unit content into a final version video script according to the instructions.",
+        messages=conversation_history,
+        max_tokens=1500,
+        stream=False
+    )
+    return response.content[0].text
+
+def get_full_response(unit_info):
+    """
+    Generates the full video script by using a second model call to review the script.
+    If the review determines that the script is incomplete, it requests a continuation
+    and appends the result. This process repeats until the reviewer responds with 'complete'.
+    """
+    full_response = get_initial_generation(unit_info)
+    review_result = review_content(full_response)
+    
+    # Loop to continue generating until the review marks the script as complete.
+    while review_result != "complete":
+        continuation = get_continuation(full_response, unit_info)
+        full_response += "\n" + continuation
+        review_result = review_content(full_response)
     
     return full_response
 
@@ -189,8 +220,8 @@ with col1:
     grade = st.selectbox(
         "Select Grade Level:",
         [
-            "Kindergarten", "Grade 1", "Grade 2", "Grade 3", "Grade 4", 
-            "Grade 5", "Grade 6", "Grade 7", "Grade 8", 
+            "Kindergarten", "Grade 1", "Grade 2", "Grade 3", "Grade 4",
+            "Grade 5", "Grade 6", "Grade 7", "Grade 8",
             "Algebra 1", "Geometry", "Algebra 2"
         ]
     )
