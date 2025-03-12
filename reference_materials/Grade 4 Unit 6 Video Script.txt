@@ -1,0 +1,67 @@
+﻿FRAME 1
+* Narration: "Welcome to Grade 4 Unit 6, where students develop strategies for multi-digit multiplication and division. This unit represents a crucial step in students' mathematical journey, as they move from basic multiplication and division to working with larger numbers systematically. Our goal is to help students build fluency while maintaining strong conceptual understanding."
+* On-Screen Text: "Grade 4 Unit 6: Multi-Digit Operations"
+* Visuals: Simple title slide with unit name and key operations (× ÷) in large font, using a clean font like Arial or Roboto
+FRAME 2
+* Narration: "Let's examine how this unit builds on prior learning. In Grade 2, students developed foundational skills by working with equal groups and understanding even and odd numbers. This progressed in Grade 3 to using area models and base-ten diagrams for multiplication, where students learned to decompose two-digit factors into tens and ones. Now in Grade 4, they'll extend these strategies to work with larger numbers."
+* On-Screen Text: "Building on Prior Knowledge"
+* Visuals: Three simple boxes in a row connected by arrows: Box 1: "Grade 2: Equal Groups" with simple circles grouped in pairs Box 2: "Grade 3: Area Models" with a basic rectangular model Box 3: "Grade 4: Multi-digit Operations" with an example problem
+FRAME 3
+* Narration: "A key understanding from Grade 3 that students bring to this work is that they can find the value of a product by decomposing one factor into smaller parts, finding partial products, and then combining them. This fundamental concept will be essential as they tackle larger numbers in Grade 4."
+* On-Screen Text: "Key Understanding: Breaking Numbers Apart"
+* Visuals: Simple example showing 24 × 6 broken into (20 × 6) + (4 × 6) with color-coding to show the relationship between parts
+FRAME 4
+* Narration: "Section A focuses on pattern exploration, but it's more than just finding the next number in a sequence. Students generate both geometric and numerical patterns that follow given rules. As they analyze these patterns, they develop the language of multiplication - using terms like factors, multiples, and doubles to explain what they notice. This work helps them recognize that multiplication itself follows patterns, setting the stage for work with larger numbers."
+* On-Screen Text: "Section A: Patterns and Operations"
+* Visuals: Two-column layout: Left: Simple geometric pattern using basic shapes (squares/circles growing in a predictable way) Right: Corresponding number pattern (5, 10, 15, 20)
+FRAME 5
+* Narration: "In Section B, students begin their work with multi-digit multiplication. They learn to multiply numbers up to four digits by single-digit numbers, and pairs of two-digit numbers. A crucial understanding here is that the same strategies they used with smaller numbers - breaking numbers apart by place value - can be applied to larger numbers. The distributive property becomes a powerful tool as they work with these larger products."
+* On-Screen Text: "Section B: Multi-Digit Multiplication"
+* Visuals: Simple rectangular area model for 49 × 57 divided into four parts with basic labels
+FRAME 6
+* Narration: "Let's look at a specific example of how students progress in their understanding. When multiplying 49 × 57, students might start with an area model, breaking each number into tens and ones. This visual representation helps them see why the partial product algorithm works and why each step in the process makes sense."
+* On-Screen Text: "Understanding Through Models"
+* Visuals: Progressive steps showing:
+   1. Area model: 49 × 57 broken into parts
+   2. Partial products aligned with area model sections
+   3. Connection to vertical algorithm
+FRAME 7
+* Narration: "Place value understanding is central to this work. Consider multiplying 3,419 × 8. Rather than seeing this as one complex problem, students learn to view it as a series of simpler problems based on place value. They multiply 3,000 × 8, 400 × 8, 10 × 8, and 9 × 8 separately, then combine these partial products. This strategy builds on their previous work with smaller numbers while extending to larger ones."
+* On-Screen Text: "Strategy: Place Value Decomposition"
+* Visuals: Two-column layout: Left: Expanded form 3,419 = 3,000 + 400 + 10 + 9 Right: Vertical multiplication format with color-coding
+FRAME 8
+* Narration: "Section C extends these strategies to division. Students apply their understanding of place value to work with dividends up to four digits. The key insight here is that the same decomposition strategies that worked for multiplication apply to division. Students discover that breaking apart larger numbers makes division more manageable, just as it did with multiplication. They learn to record partial quotients systematically, building a foundation for more efficient methods in Grade 5."
+* On-Screen Text: "Section C: Multi-Digit Division"
+* Visuals: Simple division example (738 ÷ 9) showing the problem with the partial quotients method side by side
+FRAME 9
+* Narration: "A common misconception students face is thinking they must tackle all the digits at once. Let's examine how breaking 738 ÷ 9 into parts makes the problem more approachable. Students can start with 720 ÷ 9 = 80, then work with the remaining 18 ÷ 9 = 2, finding that 738 ÷ 9 = 82. This connects directly to their understanding of multiplication as they check their work."
+* On-Screen Text: "Division Strategy in Action"
+* Visuals: Step-by-step breakdown showing:
+   1. Starting number: 738
+   2. First division: 720 ÷ 9 = 80
+   3. Remainder: 18 ÷ 9 = 2
+   4. Final answer: 82
+FRAME 10
+* Narration: "The strategy of decomposing by place value continues throughout division work. Take 465 ÷ 5 as an example. Students learn they can divide each part by 5: first 400, then 60, and finally 5. This systematic approach helps students maintain conceptual understanding while developing computational fluency. They see that each partial quotient contributes to the final answer, just as partial products did in multiplication."
+* On-Screen Text: "Strategy: Place Value Partitioning"
+* Visuals: Three simple boxes showing: 400 ÷ 5 = 80 60 ÷ 5 = 12 5 ÷ 5 = 1
+FRAME 11
+* Narration: "In Section D, students apply their expanded understanding to solve multi-step problems. They work with real-world contexts involving measurement, time, and data analysis. This application of skills is crucial - it's where students see how their systematic approaches to multiplication and division become tools for solving meaningful problems. They learn to choose appropriate operations and methods based on the context."
+* On-Screen Text: "Section D: Problem Solving Applications"
+* Visuals: Simple word problem example with organized solution steps using basic shapes and arrows
+FRAME 12
+* Narration: "Throughout the unit, students progress from concrete models to more efficient methods. This progression is carefully structured: they begin with visual models that make the mathematics visible, transition to recording methods that show their thinking clearly, and gradually develop more efficient strategies. At each stage, the focus remains on understanding why procedures work, not just how to follow them."
+* On-Screen Text: "Progression of Strategies"
+* Visuals: Three simple boxes showing progression: Box 1: "Concrete" (simple base-ten blocks diagram) Box 2: "Pictorial" (basic area model) Box 3: "Abstract" (standard algorithm)
+FRAME 13
+* Narration: "Let's examine a key teaching point: the transition from area models to the partial products algorithm. When students understand how an area model represents the multiplication of two numbers, they can see why the steps in the partial products algorithm make sense. This understanding helps them avoid common errors and builds their confidence with larger numbers."
+* On-Screen Text: "Building Understanding"
+* Visuals: Side-by-side comparison: Left: Area model broken into parts Right: Same problem using standard algorithm Arrows showing connections between the two methods
+FRAME 14
+* Narration: "Thank you for watching this overview of Grade 4 Unit 6. Your role in this unit is crucial. As students develop these fundamental skills, they're building the foundation for future work with rational numbers, algebraic reasoning, and more complex problem-solving. Remember that strong place value understanding and systematic approaches to operations will support your students' success in mathematics."
+* On-Screen Text: "Supporting Mathematical Understanding"
+* Visuals: Simple closing slide with three key takeaways: • Build on visual models • Support systematic thinking • Connect to prior learning
+FRAME 15
+* Narration: "The resources you need to support this learning are available through Kiddom. You'll find detailed lesson plans, student materials, and assessment tools that align with the progression we've discussed. Together, we're helping students develop not just computational skills, but mathematical thinking that will serve them throughout their educational journey."
+* On-Screen Text: "Thank You for Watching!"
+* Visuals: Final slide with: • Unit title • Quick reference to key resources • Kiddom logo
