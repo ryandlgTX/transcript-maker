@@ -20,6 +20,7 @@ def is_incomplete(response_text):
     Check if the response appears incomplete based on certain indicators.
     """
     incomplete_indicators = [
+        "[Continue"
         "would you like me to continue",
         "continue with additional frames",
         "continue with remaining frames",
